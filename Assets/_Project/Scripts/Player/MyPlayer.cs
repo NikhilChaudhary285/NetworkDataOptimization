@@ -13,6 +13,9 @@ public class MyPlayer : MonoBehaviour
         Vector3 move = new Vector3(h, 0, v);
         transform.position += move * speed * Time.deltaTime;
 
-        sender.SendOptimizedPosition(transform.position);
+        if (!sender.networkOptimization)
+            sender.SendPosition(transform.position);
+        else
+            sender.SendOptimizedPosition(transform.position);
     }
 }
