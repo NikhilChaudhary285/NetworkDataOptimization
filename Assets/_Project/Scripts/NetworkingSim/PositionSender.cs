@@ -8,8 +8,8 @@ public class PositionSender : MonoBehaviour
     #region ---- Without Network Data Optimzation ----
     public void SendPosition(Vector3 pos)
     {
-        remotePlayer.ReceivePosition(pos);
         Debug.Log($"[SEND] Pos:{pos} | Data Size: 96 bits");
+        remotePlayer.ReceivePosition(pos);
     }
     #endregion ---- Without Network Data Optimzation ----
 

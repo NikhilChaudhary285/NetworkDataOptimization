@@ -3,17 +3,18 @@ using UnityEngine;
 public class RemotePlayer : MonoBehaviour
 {
     Vector3 targetPosition;
+    Vector3 finalTarget;
     [SerializeField] private Vector3 remotePlayerOffset;
 
     #region ---- Without Network Data Optimzation ----
 
-    public void ReceivePosition(Vector3 pos)
+    public void ReceivePosition(Vector3 position)
     {
-        //transform.position = pos;
+        //transform.position = position;
 
         // Apply movement using its own starting position
-        transform.position = pos + remotePlayerOffset;
-        Debug.Log($"[RECEIVE]:{transform.position}");
+        Debug.Log($"[RECEIVE]:{position}");
+        transform.position = position + remotePlayerOffset;
     }
     #endregion ---- Without Network Data Optimzation ----
 
@@ -42,15 +43,19 @@ public class RemotePlayer : MonoBehaviour
             data.z / 10f
         );
 
-        Debug.Log($"[RECEIVE] Reconstructed:{targetPosition}");
+        Debug.Log($"[NETWORK][RECEIVE] Reconstructed Position (No Offset): {targetPosition}");
     }
 
     void Update()
     {
+        finalTarget = targetPosition + remotePlayerOffset;
+
+        Debug.Log($"[REMOTE][APPLY] Base:{targetPosition} | Offset:{remotePlayerOffset} | Final:{finalTarget}");
+
         transform.position = Vector3.Lerp(
             transform.position,
-            targetPosition + remotePlayerOffset,
-            Time.deltaTime * 10f // Time.deltaTime * 10f: * 10f: High value (e.g. 15–20): Fast catch-up || Medium value (e.g. 8–12): Balanced smoothing || Low value (e.g. 3–6): Very smooth
+            finalTarget,
+            Time.deltaTime * 10f // Time.deltaTime * variable such as for: High value (e.g. 15–20): Fast catch-up || Medium value (e.g. 8–12): Balanced smoothing || Low value (e.g. 3–6): Very smooth
         );
     }
     #endregion ---- Unpack Data With Interpolation Concept To Smooth Movement With Network Data Optimization ----
