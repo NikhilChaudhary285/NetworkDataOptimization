@@ -11,11 +11,12 @@ public class PositionSender : MonoBehaviour
         Debug.Log($"[SEND] Pos:{pos} | Data Size: 96 bits");
         remotePlayer.ReceivePosition(pos);
     }
-    #endregion ---- Without Network Data Optimzation ----
+	#endregion ---- Without Network Data Optimzation ----
 
-    #region ---- Pack Data: For Network Data Optimization ----
+	#region ---- Pack Data: For Network Data Optimization ----
 
-    public void SendOptimizedPosition(Vector3 position)
+	// Quantizes position to reduce network payload (float -> short)
+	public void SendOptimizedPosition(Vector3 position)
     {
         OptimizedPosition data = new OptimizedPosition
         {
