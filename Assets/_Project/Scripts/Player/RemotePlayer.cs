@@ -14,7 +14,7 @@ public class RemotePlayer : MonoBehaviour
 
 		// Apply movement using its own starting position
 		Debug.Log($"[RECEIVE]:{position}");
-		transform.position = position + remotePlayerOffset;
+        targetPosition = position;
 	}
 	#endregion ---- Without Network Data Optimzation ----
 
