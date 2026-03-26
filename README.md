@@ -206,7 +206,7 @@ This project explores:
 
 ----------------------
 
-Author:
+👨‍💻 Author
 
 Nikhil Chaudhary<br>
 Unity Multiplayer Developer
