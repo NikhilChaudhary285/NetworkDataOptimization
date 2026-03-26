@@ -14,6 +14,8 @@ Alongside this, the project also includes a small weapon system architecture exp
 
 🧩 Network Data Optimization (Core Focus)
 
+----------------------
+
 🎮 Simulation Setup
 
 My Player
@@ -99,6 +101,8 @@ UI labels are used to clearly distinguish:
 ----------------------
 
 🔫 Weapon System Architecture (Learning Module)
+
+----------------------
 
 This part of the project is a separate, script-only exploration created for learning purposes.
 
