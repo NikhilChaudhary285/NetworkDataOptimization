@@ -61,6 +61,7 @@ Instead of applying directly:<br>
 • Positions are interpolated (Vector3.Lerp)<br>
 
 This ensures:
+
 • Smooth motion<br>
 • No visible jitter
 
@@ -120,12 +121,13 @@ This part of the project is a separate, script-only exploration created for lear
 • Weapon (Abstract Base Class)
 
 Defines shared weapon behavior:
-• Ammo
-• Magazine size
-• Fire rate
-• Derived Weapon Types
-• Extend base functionality
-• Allow custom firing behavior
+
+• Ammo<br>
+• Magazine size<br>
+• Fire rate<br>
+• Derived Weapon Types<br>
+• Extend base functionality<br>
+• Allow custom firing behavior<br>
 • PlayerWeaponController
 
 Manages:
@@ -163,6 +165,7 @@ This module was created to:
 📁 Additional Resources
 
 🎥 Demo Video:
+
 https://drive.google.com/file/d/1i2o3uwph4UPJG3K8IdRaNkPK0qha\_oHZ/view?usp=sharing
 
 Shows movement, optimization, and smoothing
