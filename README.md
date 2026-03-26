@@ -172,7 +172,7 @@ This module was created to:
 
 🎥 Demo Video:
 
-https://drive.google.com/file/d/1i2o3uwph4UPJG3K8IdRaNkPK0qha\_oHZ/view?usp=sharing
+https://drive.google.com/file/d/1i2o3uwph4UPJG3K8IdRaNkPK0qha_oHZ/view?usp=sharing
 
 Shows movement, optimization, and smoothing
 
