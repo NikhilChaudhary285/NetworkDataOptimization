@@ -32,14 +32,15 @@ This is a local simulation (no networking library used), designed to focus only 
 
 📉 Data Optimization Approach
 
-• Without Optimization
+A) Without Optimization
 
 • Sends full Vector3<br>
 • 3 floats = 96 bits<br>
 
-With Optimization
+B) With Optimization
 
 Position values are:
+
 • Quantized (reduced precision)<br>
 • Packed into smaller data types<br>
 • Reduced to \~48 bits<br>
