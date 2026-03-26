@@ -18,12 +18,12 @@ Alongside this, the project also includes a small weapon system architecture exp
 
 My Player
 
-• Controlled using W, A, S, D
+• Controlled using W, A, S, D<br>
 • Acts as the sender of position data
 
 Remote Player
 
-• Receives optimized data via function calls
+• Receives optimized data via function calls<br>
 • Reconstructs and applies movement
 
 This is a local simulation (no networking library used), designed to focus only on data flow and optimization logic.
@@ -32,35 +32,36 @@ This is a local simulation (no networking library used), designed to focus only 
 
 📉 Data Optimization Approach
 
-• Without Optimization
-• Sends full Vector3
-• 3 floats = 96 bits
-• With Optimization
+• Without Optimization<br>
+• Sends full Vector3<br>
+• 3 floats = 96 bits<br>
+• With Optimization<br>
 
 Position values are:
 
-• Quantized (reduced precision)
-• Packed into smaller data types
-• Reduced to \~48 bits
+• Quantized (reduced precision)<br>
+• Packed into smaller data types<br>
+• Reduced to \~48 bits<br>
 
 ----------------------
 
 ⚙️ Assumptions
 
-• World range: -50 to +50
-• Precision: \~0.1 units
-• Trade-off: Slight precision loss for bandwidth reduction
+• World range: -50 to +50<br>
+• Precision: \~0.1 units<br>
+• Trade-off: Slight precision loss for bandwidth reduction<br>
 
 ----------------------
 
 🔄 Reconstruction \& Smooth Movement
 
-• Received data is converted back into world position
+Received data is converted back into world position
 
-Instead of applying directly:
-• Positions are interpolated (Vector3.Lerp)
+Instead of applying directly:<br>
+• Positions are interpolated (Vector3.Lerp)<br>
+
 This ensures:
-• Smooth motion
+• Smooth motion<br>
 • No visible jitter
 
 ----------------------
@@ -69,54 +70,56 @@ This ensures:
 
 Logs include:
 
-• Sent position
-• Data size
-• Reconstructed position
+• Sent position<br>
+• Data size<br>
+• Reconstructed position<br>
 
 Debug logs are:
 
-• Enabled only in Unity Editor
+• Enabled only in Unity Editor<br>
 • Disabled in runtime builds for performance
 
 UI labels are used to clearly distinguish:
 
-• My Player
+• My Player<br>
 • Remote Player
 
 ----------------------
 
 🎯 Key Learnings
 
-• Reducing network payload size using quantization
-• Handling precision vs bandwidth trade-offs
-• Importance of interpolation in networked movement
+• Reducing network payload size using quantization<br>
+• Handling precision vs bandwidth trade-offs<br>
+• Importance of interpolation in networked movement<br>
 • Separating network data from render movement logic
 
 ----------------------
 
 🔫 Weapon System Architecture (Learning Module)
 
-• This part of the project is a separate, script-only exploration created for learning purposes.
+This part of the project is a separate, script-only exploration created for learning purposes.
 
 ⚠️ Note:
 
-• No gameplay or scene integration
-• No player interaction with weapons
+• No gameplay or scene integration<br>
+• No player interaction with weapons<br>
 • Focus is purely on code architecture and design
 
 ----------------------
 
 🏗️ Goals
 
-• Practice clean architecture
-• Improve system scalability
+• Practice clean architecture<br>
+• Improve system scalability<br>
 • Explore decoupled design patterns
 
 ----------------------
 
 🧠 Structure
+
 • Weapon (Abstract Base Class)
-• Defines shared weapon behavior:
+
+Defines shared weapon behavior:
 • Ammo
 • Magazine size
 • Fire rate
@@ -127,22 +130,22 @@ UI labels are used to clearly distinguish:
 
 Manages:
 
-• Multiple weapon slots
+• Multiple weapon slots<br>
 • Delegates actions to active weapon
 
 UI Layer (HUD Concept)
 
 Designed to display:
 
-• Weapon info
-• Ammo count
-• Fully decoupled from gameplay logic
+• Weapon info<br>
+• Ammo count<br>
+• Fully decoupled from gameplay logic<br>
 • State Handling
 
 Basic weapon states like:
 
-• Idle
-• Firing
+• Idle<br>
+• Firing<br>
 • Reloading
 
 ----------------------
@@ -150,15 +153,16 @@ Basic weapon states like:
 🎯 Purpose
 
 This module was created to:
-• Practice engineering thinking in Unity
-• Understand how to design maintainable systems
+
+• Practice engineering thinking in Unity<br>
+• Understand how to design maintainable systems<br>
 • Experiment with modular gameplay architecture
 
 ----------------------
 
 📁 Additional Resources
 
-🎥 Demo Video (Google Drive Link):
+🎥 Demo Video:
 https://drive.google.com/file/d/1i2o3uwph4UPJG3K8IdRaNkPK0qha\_oHZ/view?usp=sharing
 
 Shows movement, optimization, and smoothing
@@ -166,6 +170,7 @@ Shows movement, optimization, and smoothing
 ----------------------
 
 📄 Optimization Notes (PDF):
+
 https://drive.google.com/file/d/171XYRpFP-prnrtYPGavzDaOYbw-bjlkN/view?usp=sharing
 
 Explains approach and calculations
@@ -176,8 +181,8 @@ If links do not open directly, please copy and paste them into your browser.
 
 📌 Notes
 
-• Fully functional Unity project
-• Focused on clarity and experimentation
+• Fully functional Unity project<br>
+• Focused on clarity and experimentation<br>
 • No external networking dependencies
 
 ----------------------
@@ -185,14 +190,16 @@ If links do not open directly, please copy and paste them into your browser.
 ✅ Summary
 
 This project explores:
-• Efficient position data optimization techniques
-• Smooth remote player movement simulation
+
+• Efficient position data optimization techniques<br>
+• Smooth remote player movement simulation<br>
 • Practical engineering patterns in Unity scripting
 
 ----------------------
 
-Author:<br>
-Nikhil Chaudhary
-Unity Developer
+Author:
+
+Nikhil Chaudhary<br>
+Unity Multiplayer Developer
 
 ----------------------
